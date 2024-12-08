@@ -1,12 +1,11 @@
 import { client } from './microcms';
 import { CardProps } from '@/app/_types/types'
 
-export async function getCardPosts(word:string): Promise<CardProps[]> {
+export async function getCardPosts(): Promise<CardProps[]> {
   const data = await client.get({
-    endpoint: 'card', // 'blog'はmicroCMSのエンドポイント名
+    endpoint: 'card',
     queries: {
-      fields: 'id,title,message',  // idとtitleを取得
-      filters: `title[contains]${word}`,
+      fields: 'id,message',
     },
   });
   return data.contents;

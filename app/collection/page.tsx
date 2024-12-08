@@ -1,26 +1,29 @@
 import { getCardPosts } from '@/app/_libs/getCards';
-
+import { Bottle } from '@/app/_components/animation/Bottle';
+import css from './Collection.module.css';
 
 export default async function Home() {
-// 配列からランダムなキーワードを選択
-  const keywords = ["あ", "てす", "も",];
-  const randomIndex = Math.floor(Math.random() * keywords.length); // ランダムなインデックスを生成
-  const word = keywords[randomIndex]; // ランダムなキーワードを取得
-const posts = await getCardPosts(word);
+  const posts = await getCardPosts();
 
   return (
-    <main>
-      <h1>Your message has arrived.</h1>
+    <>
+      <h1>Messages received so far</h1>
+      <div className={`${css.bottle}`}><Bottle /></div>
       <ul>
         {posts.map((post) => (
           <li key={post.id}>
-              {post.title} {/* タイトルを表示 */}
-              <div>
-                {post.message} {/* タイトルを表示 */}
-              </div>
+          <article className={`${css.message_wrap}`}>
+          <h2 className={`${css.head}`}>Dear...</h2>
+            {/* messageをHTMLとして表示 */}
+            <div  className={`${css.message}`}
+              dangerouslySetInnerHTML={{
+                __html: post.message || 'メッセージはありません',
+              }}
+            />
+            </article>
           </li>
         ))}
       </ul>
-    </main>
+    </>
   );
 }

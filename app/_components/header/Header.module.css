@@ -1,0 +1,30 @@
+.global_header {
+  margin: auto;
+  padding: 0 14px;
+  width: 90%;
+  max-width: 600px;
+  background: rgba(211, 232, 235, 0.3);
+  position: absolute;
+  inset: auto 0 5%;
+  padding: 16px;
+  border-radius: 60px;
+  backdrop-filter: blur(5px);
+  z-index: 10;
+  .nav {
+    font-family: var( --Caveat);
+    font-weight: 600;
+    font-size: 1.6rem;
+    display: grid;
+    gap: 1px;
+    grid-template-columns: auto auto auto;
+    text-align: center;
+  }
+}
+
+.nav a {
+  color: var(--foreground);
+  transition: all .2s ease-in-out;
+  &:hover {
+    color: #D9BA6C;
+  }
+}

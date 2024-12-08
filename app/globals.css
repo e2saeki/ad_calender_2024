@@ -1,6 +1,7 @@
 :root {
   --background: #ffffff;
-  --foreground: #171717;
+  --foreground: #7A5A50;
+  --Caveat: 'Caveat', sans-serif;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -14,6 +15,7 @@ html,
 body {
   max-width: 100vw;
   overflow-x: hidden;
+  height: 100%;
 }
 
 body {
@@ -38,5 +40,21 @@ a {
 @media (prefers-color-scheme: dark) {
   html {
     color-scheme: dark;
+  }
+}
+
+.back {
+  min-height: 200px;
+}
+main {
+  margin: auto;
+  width: 100%;
+  padding-bottom: 15%;
+  h1 {
+      font-family: var( --Caveat);
+      color: #D9BA6C;
+      font-size: 4rem;
+      margin: 0 auto 2rem;
+      text-align: center;
   }
 }
