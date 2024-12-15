@@ -1,6 +1,6 @@
 import { getRandomPosts } from '@/app/_libs/getCards';
 import { Bottle } from '@/app/_components/animation/Bottle';
-import css from './Random.module.css';
+import css from '@/app/css/Collection.module.css';
 
 export default async function Home() {
  // 記事を取得

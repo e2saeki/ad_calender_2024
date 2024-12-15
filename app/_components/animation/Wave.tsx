@@ -8,15 +8,10 @@ export const Wave = () => {
   });
   return (
     <>
-    {/* @ts-expect-error: カスタム要素 'lottie-player' が型定義されていないためエラーを無視します */}
-    <lottie-player
-     ref={ref}
-     autoplay
-     loop
-     mode="normal"
-     src="/lottie/wave.json">
-     {/* @ts-expect-error: カスタム要素 'lottie-player' が型定義されていないためエラーを無視します */}
-     </lottie-player>
+      {/* @ts-expect-error: カスタム要素 'lottie-player' が型定義されていないためエラーを無視します */}
+      <lottie-player ref={ref} autoplay loop mode="normal" src="/lottie/wave.json">
+        {/* @ts-expect-error: カスタム要素 'lottie-player' が型定義されていないためエラーを無視します */}
+      </lottie-player>
     </>
   );
 };

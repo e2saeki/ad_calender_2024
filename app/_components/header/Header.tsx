@@ -8,7 +8,6 @@ export const Header = () => {
         <nav className={`${css.nav}`}>
           <Link href="/">Top</Link>
           <Link href="/collection/">Collection</Link>
-          <Link href="/random/">Random</Link>
         </nav>
       </header>
     </>

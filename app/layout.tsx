@@ -3,7 +3,7 @@ import { Header } from '@/app/_components/header/Header';
 import { Caveat } from 'next/font/google';
 import { Wave } from '@/app/_components/animation/Wave';
 
-import './globals.css';
+import './css/globals.css';
 
 const caveat = Caveat({
   weight: ['400', '500', '600', '700'],

@@ -3,7 +3,7 @@
   padding: 0 14px;
   width: 90%;
   max-width: 600px;
-  background: rgba(211, 232, 235, 0.3);
+  background: rgba(255, 255, 255, 0.6);
   position: absolute;
   inset: auto 0 5%;
   padding: 16px;
@@ -16,7 +16,7 @@
     font-size: 1.6rem;
     display: grid;
     gap: 1px;
-    grid-template-columns: auto auto auto;
+    grid-template-columns: auto auto;
     text-align: center;
   }
 }

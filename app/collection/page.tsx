@@ -1,6 +1,6 @@
 import { getCardPosts } from '@/app/_libs/getCards';
 import { Bottle } from '@/app/_components/animation/Bottle';
-import css from './Collection.module.css';
+import css from '@/app/css/Collection.module.css';
 
 export default async function Home() {
   const posts = await getCardPosts();
@@ -9,7 +9,7 @@ export default async function Home() {
     <>
       <h1>Messages received so far</h1>
       <div className={`${css.bottle}`}><Bottle /></div>
-      <ul>
+      <ul className={`${css.list}`}>
         {posts.map((post) => (
           <li key={post.id}>
           <article className={`${css.message_wrap}`}>
