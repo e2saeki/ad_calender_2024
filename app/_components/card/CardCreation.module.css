@@ -76,3 +76,8 @@
 .form_wrap:has(.button:hover )::before {
   transform: rotate(45deg);
 }
+
+.error {
+  font-size: .9rem;
+  color: #da5f5f;
+}

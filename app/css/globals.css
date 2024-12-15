@@ -37,6 +37,10 @@ a {
   text-decoration: none;
 }
 
+p {
+  text-align: center;
+}
+
 @media (prefers-color-scheme: dark) {
   html {
     color-scheme: dark;
@@ -45,16 +49,35 @@ a {
 
 .back {
   min-height: 200px;
+  z-index: 1;
+  position: relative;
 }
 main {
-  margin: auto;
+  margin: -100px auto 0;
   width: 100%;
-  padding-bottom: 15%;
+  padding: 0 4% 15%;
+  display: flex;
+  flex-flow: column nowrap;
+  z-index: 2;
+  gap: 2rem;
+  position: relative;
   h1 {
       font-family: var( --Caveat);
       color: #D9BA6C;
       font-size: 4rem;
-      margin: 0 auto 2rem;
+      margin: auto;
       text-align: center;
+  }
+}
+
+
+@media (600px >= width) {
+  main {
+    h1 {
+        font-size: 10vw;
+    }
+      p {
+        font-size: 3vw;
+    }
   }
 }

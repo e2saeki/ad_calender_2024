@@ -13,7 +13,6 @@ export default function Contact() {
     event.preventDefault();
     setIsSubmitting(true);
     setError('');
-
     try {
       // API Routeにデータを送信
       const response = await fetch('/api/sendMessage', {
@@ -23,13 +22,11 @@ export default function Contact() {
         },
         body: JSON.stringify({ message }),
       });
-
       // レスポンスの確認
       const result = await response.json();
       if (!response.ok) {
         throw new Error(result.error || '送信に失敗しました');
       }
-
       // 成功時に別のページにリダイレクト
       router.push('/random/');
     } catch {
@@ -51,7 +48,7 @@ export default function Contact() {
         value={message}
         onChange={(e) => setMessage(e.target.value)}
       ></textarea>
-      {error && <p style={{ color: 'red' }}>{error}</p>}
+      {error && <p className={`${css.error}`}>{error}</p>}
       <button type="submit" disabled={isSubmitting} className={`${css.button}`}>
         {isSubmitting ? '送信中...' : 'メッセージを送る'}
       </button>

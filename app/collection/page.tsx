@@ -8,18 +8,16 @@ export default async function Home() {
   return (
     <>
       <h1>Messages received so far</h1>
+      <p>これまでに届いたメッセージです</p>
       <div className={`${css.bottle}`}><Bottle /></div>
       <ul className={`${css.list}`}>
         {posts.map((post) => (
           <li key={post.id}>
           <article className={`${css.message_wrap}`}>
           <h2 className={`${css.head}`}>Dear...</h2>
-            {/* messageをHTMLとして表示 */}
-            <div  className={`${css.message}`}
-              dangerouslySetInnerHTML={{
-                __html: post.message || 'メッセージはありません',
-              }}
-            />
+            <div className={`${css.message}`}>
+              {post.message || 'メッセージはありません'}
+            </div>
             </article>
           </li>
         ))}

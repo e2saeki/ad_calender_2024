@@ -4,8 +4,7 @@ import { NextResponse } from 'next/server';
 export async function POST(request: Request) {
   try {
     // クライアントから送信されたデータを取得
-    const body = await request.json();
-    const { message } = body;
+    const { message } = await request.json();
 
     // メッセージが空の場合のエラーチェック
     if (!message) {
