@@ -2,8 +2,8 @@ import { getRandomPosts } from '@/app/_libs/microcms';
 import { Bottle } from '@/app/_components/animation/Bottle';
 import css from '@/app/css/Collection.module.css';
 
-export const dynamic = 'force-dynamic';
-
+// ISR の再生成間隔を指定 
+export const revalidate = 10; 
 
 export default async function Home() {
  // 記事を取得
