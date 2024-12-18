@@ -1,4 +1,4 @@
-import { getCardPosts } from '@/app/_libs/getCards';
+import { getCardPosts } from '@/app/_libs/microcms';
 import { Bottle } from '@/app/_components/animation/Bottle';
 import css from '@/app/css/Collection.module.css';
 

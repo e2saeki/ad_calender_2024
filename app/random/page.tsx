@@ -1,10 +1,14 @@
-import { getRandomPosts } from '@/app/_libs/getCards';
+import { getRandomPosts } from '@/app/_libs/microcms';
 import { Bottle } from '@/app/_components/animation/Bottle';
 import css from '@/app/css/Collection.module.css';
+
+export const dynamic = 'force-dynamic';
+
 
 export default async function Home() {
  // 記事を取得
   const contents = await getRandomPosts();
+  
   // ランダムなインデックスを3つ生成 (重複なし)
   const getRandomIndices = (num: number, max: number) : number[] => {
   const indices: number[] = [];
