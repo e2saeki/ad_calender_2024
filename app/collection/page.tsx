@@ -8,7 +8,7 @@ export default async function Home() {
   return (
     <>
       <h1>Messages received so far</h1>
-      <p>これまでに届いたメッセージです</p>
+      <p>先程送ったメッセージも、ここに届くかも…</p>
       <div className={`${css.bottle}`}><Bottle /></div>
       <ul className={`${css.list}`}>
         {posts.map((post) => (

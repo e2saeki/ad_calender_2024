@@ -33,6 +33,8 @@
 }
 .textarea {
   position: relative;
+  overflow: hidden;
+  resize: none;
   z-index: 1;
   margin: auto;
   min-height: 160px;
