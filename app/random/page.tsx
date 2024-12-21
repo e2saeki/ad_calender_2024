@@ -1,17 +1,16 @@
 import { getRandomPosts } from '@/app/_libs/microcms';
-import { Bottle } from '@/app/_components/animation/Bottle';
 import css from '@/app/css/Collection.module.css';
 
-// ISR の再生成間隔を指定 
-export const revalidate = 10; 
+// ISR の再生成間隔を指定
+export const revalidate = 10;
 
 export default async function Home() {
- // 記事を取得
+  // 記事を取得
   const contents = await getRandomPosts();
-  
+
   // ランダムなインデックスを3つ生成 (重複なし)
-  const getRandomIndices = (num: number, max: number) : number[] => {
-  const indices: number[] = [];
+  const getRandomIndices = (num: number, max: number): number[] => {
+    const indices: number[] = [];
     while (indices.length < num) {
       const index = Math.floor(Math.random() * max);
       if (!indices.includes(index)) {
@@ -27,21 +26,16 @@ export default async function Home() {
 
   return (
     <>
-      <h1>Your message has arrived.</h1>
-      <p>海からメッセージが流れ着きました</p>
-      <div className={`${css.bottle}`}><Bottle /></div>
-            <ul className={`${css.list}`}>
+      <ul className={`${css.list}`}>
         {randomContents.map((post) => (
           <li key={post.id}>
-          <article className={`${css.message_wrap}`}>
-          <h2 className={`${css.head}`}>Dear...</h2>
-            <div className={`${css.message}`}>
-              {post.message || 'メッセージはありません'}
-            </div>
+            <article className={`${css.message_wrap}`}>
+              <h2 className={`${css.head}`}>Dear...</h2>
+              <div className={`${css.message}`}>{post.message || 'メッセージはありません'}</div>
             </article>
           </li>
         ))}
-        </ul>
+      </ul>
     </>
   );
 }

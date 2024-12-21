@@ -6,7 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "lint:style": "stylelint '**/*.{css,scss}' --fix"
   },
   "dependencies": {
     "@lottiefiles/lottie-player": "^2.0.12",
@@ -21,6 +22,10 @@
     "@types/react-dom": "^19",
     "eslint": "^8",
     "eslint-config-next": "15.0.4",
+    "stylelint": "^16.12.0",
+    "stylelint-config-prettier-scss": "^1.0.0",
+    "stylelint-config-recess-order": "^5.1.1",
+    "stylelint-config-standard-scss": "^14.0.0",
     "typescript": "^5"
   }
 }

@@ -1,15 +1,14 @@
 import { getCardPosts } from '@/app/_libs/microcms';
-import { Bottle } from '@/app/_components/animation/Bottle';
 import css from '@/app/css/Collection.module.css';
+
+// ISR の再生成間隔を指定 
+export const revalidate = 1;
 
 export default async function Home() {
   const posts = await getCardPosts();
 
   return (
     <>
-      <h1>Messages received so far</h1>
-      <p>先程送ったメッセージも、ここに届くかも…</p>
-      <div className={`${css.bottle}`}><Bottle /></div>
       <ul className={`${css.list}`}>
         {posts.map((post) => (
           <li key={post.id}>

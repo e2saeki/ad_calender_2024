@@ -11,7 +11,7 @@ export default function Contact() {
   // テキストエリアの参照
   const textareaRef = useRef<HTMLTextAreaElement | null>(null);
 
- // テキストエリアの高さを自動調整
+  // テキストエリアの高さを自動調整
   const handleInput = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
     const textarea = e.target;
     // 高さを一旦リセットしてから再計算
@@ -24,9 +24,10 @@ export default function Contact() {
     setIsSubmitting(true);
     setError('');
     try {
-     // 入力されたメッセージを取得
+      // 入力されたメッセージを取得
       const message = textareaRef.current?.value || '';
       // API Routeにデータを送信
+      
       const response = await fetch('/api/sendMessage', {
         method: 'POST',
         headers: {
@@ -40,7 +41,7 @@ export default function Contact() {
         throw new Error(result.error || '送信に失敗しました');
       }
       // 成功時に別のページにリダイレクト
-      router.push('/random/');
+      router.push('/collection');
     } catch {
       setError('エラーが発生しました');
     } finally {
@@ -49,23 +50,30 @@ export default function Contact() {
   }
 
   return (
-    <form onSubmit={handleSubmit}>
-    <div className={`${css.form_wrap}`}>
-      <label htmlFor="message" className={`${css.label}`}>Dear...</label>
-      <textarea
-        ref={textareaRef}
-        className={`${css.textarea}`}
-        name="message"
-        placeholder="Write your message here"
-        required
-        defaultValue=""
-        onInput={handleInput}
-      ></textarea>
-      {error && <p className={`${css.error}`}>{error}</p>}
-      <button type="submit" disabled={isSubmitting} className={`${css.button}`}>
-        {isSubmitting ? '送信中...' : 'メッセージを送る'}
-      </button>
-      </div>
-    </form>
+    <div className={`${css.contents_wrap}`}>
+      <p>メッセージをボトルにいれて海に流してみましょう</p>
+      <form onSubmit={handleSubmit}>
+        <div className={`${css.form_wrap}`}>
+          <div className={`${css.form_inner}`}>
+            <label htmlFor="message" className={`${css.label}`}>
+              Dear...
+            </label>
+            <textarea
+              ref={textareaRef}
+              className={`${css.textarea}`}
+              name="message"
+              placeholder="Write your message here"
+              required
+              defaultValue=""
+              onInput={handleInput}
+            ></textarea>
+            {error && <p className={`${css.error}`}>{error}</p>}
+            <button type="submit" disabled={isSubmitting} className={`${css.button}`}>
+              {isSubmitting ? '送信中...' : 'メッセージを送る'}
+            </button>
+          </div>
+        </div>
+      </form>
+    </div>
   );
 }

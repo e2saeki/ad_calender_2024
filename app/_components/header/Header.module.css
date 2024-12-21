@@ -1,30 +1,77 @@
 .global_header {
-  margin: auto;
-  padding: 0 14px;
-  width: 90%;
-  max-width: 600px;
-  background: rgba(255, 255, 255, 0.6);
   position: absolute;
-  inset: auto 0 5%;
-  padding: 16px;
-  border-radius: 60px;
-  backdrop-filter: blur(5px);
-  z-index: 10;
-  .nav {
-    font-family: var( --Caveat);
-    font-weight: 600;
-    font-size: 1.6rem;
-    display: grid;
-    gap: 1px;
-    grid-template-columns: auto auto;
-    text-align: center;
+  inset: 0 auto 0 0;
+  z-index: 2;
+  width: 45%;
+  height: 80vh;
+  max-height: 800px;
+  padding: 0 0 0 10%;
+  margin: auto auto auto 0;
+  container-type: inline-size;
+  @media screen and (width <= 980px) {
+    position: relative;
+    inset: auto;
+    width: 100%;
+    height: auto;
+    padding: 0;
+    overflow: hidden;
   }
 }
 
+  .title {
+    z-index: 2;
+    width: 80%;
+    margin: 2rem auto;
+    font-family: var(--caveat);
+    font-size: calc(100cqw / 5);
+    font-weight: 400;
+    line-height: 1;
+    color: #d9ba6c;
+    @media screen and (width <= 980px) {
+    margin: 4rem auto;
+    font-size: calc(100cqw / 9);
+    }
+  }
+
+  .nav {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    flex-flow: column nowrap;
+    gap: 2rem;
+    width: 80%;
+    margin: 4rem auto;
+    font-family: var(--caveat);
+    font-size: calc(100cqw / 15);
+    font-weight: 600;
+    @media screen and (width <= 980px) {
+        font-size: 1.6rem;
+    }
+  }
+
+
 .nav a {
+  display: block;
   color: var(--foreground);
-  transition: all .2s ease-in-out;
+  transition: color 0.2s ease-in-out;
+
   &:hover {
-    color: #D9BA6C;
+    color: #d9ba6c;
+  }
+}
+
+.bottle {
+  position: absolute;
+  inset: auto -50% -100px auto;
+  z-index: 1;
+  width: 150%;
+  min-width: 700px;
+  max-width: 980px;
+  height: auto;
+  aspect-ratio: 1.6/1;
+  margin: auto;
+  @media screen and (width <= 980px) {
+    inset: auto -30% -30% auto;
+    width: 100%;
   }
 }

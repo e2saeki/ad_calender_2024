@@ -8,7 +8,7 @@ import './css/globals.css';
 const caveat = Caveat({
   weight: ['400', '500', '600', '700'],
   subsets: ['latin'],
-  variable: '--Caveat',
+  variable: '--caveat',
   fallback: ['Noto Sans JP', 'sans-serif'],
 });
 
@@ -26,8 +26,10 @@ export default function RootLayout({
     <html lang="ja">
       <body className={`${caveat.variable}`}>
         <div className="back"><Wave /></div>
-        <main>{children}</main>
+        <div className="contents_wrap">
         <Header />
+        <main>{children}</main>
+        </div>
       </body>
     </html>
   );
