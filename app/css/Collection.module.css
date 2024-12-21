@@ -9,9 +9,12 @@
 }
 
 .list li {
-    display: flex;
-    flex-grow: 1;
-    align-items: center;
+  display: flex;
+  flex-grow: 1;
+  align-items: center;
+  flex-flow: column nowrap;
+  justify-content: center;
+  gap: 2rem;
 }
 
 .message_wrap {
@@ -44,7 +47,6 @@
   .list li:nth-child(even) .message_wrap {
     transform: rotate(3deg)  translate(0,0);
   }
-
   .list li:nth-child(odd) .message_wrap {
     transform: rotate(-3deg)  translate(0,0);
   }

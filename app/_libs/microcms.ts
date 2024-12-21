@@ -23,6 +23,7 @@ export async function getCardPosts(): Promise<CardProps[]> {
     endpoint: 'card',
     queries: {
       fields: 'id,message',
+      limit: 100,
     },
   });
   return data.contents;
@@ -33,7 +34,7 @@ export async function getRandomPosts(): Promise<CardProps[]> {
   const data = await client.get({
     endpoint: 'card',
     queries: {
-      limit: 100,
+      limit: 10,
     },
   });
   return data.contents;

@@ -29,6 +29,7 @@ export default async function Home() {
       <ul className={`${css.list}`}>
         {randomContents.map((post) => (
           <li key={post.id}>
+            <p>誰かのメッセージが流れ着きました</p>
             <article className={`${css.message_wrap}`}>
               <h2 className={`${css.head}`}>Dear...</h2>
               <div className={`${css.message}`}>{post.message || 'メッセージはありません'}</div>
