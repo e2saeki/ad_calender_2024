@@ -2,7 +2,7 @@
   "css.validate": false,
   "scss.validate": false,
   "stylelint.validate": ["css", "scss"], //バリデートするファイルの種類
-  "editor.defaultFormatter": "esbenp.prettier-vscode", //Prettier使用してない方はこの行は不要
+  "editor.defaultFormatter": "esbenp.prettier-vscode", //Prettierをデフォルトフォーマッタに設定
   "editor.formatOnSave": false, //VSCodeの自動フォーマットを無効化
   "editor.codeActionsOnSave": {
     "source.fixAll.stylelint": "explicit"

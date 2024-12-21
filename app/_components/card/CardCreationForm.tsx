@@ -41,7 +41,7 @@ export default function Contact() {
         throw new Error(result.error || '送信に失敗しました');
       }
       // 成功時に別のページにリダイレクト
-      router.push('/collection');
+      router.push('/random');
     } catch {
       setError('エラーが発生しました');
     } finally {
