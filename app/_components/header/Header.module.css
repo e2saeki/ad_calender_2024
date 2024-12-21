@@ -76,7 +76,9 @@
 }
 @media screen and (width <= 980px) {
   .bottle {
-    inset: auto -30% -30% auto;
-    width: 100%;
+    inset: auto -30% -10%;
+    width: 500px;
+    min-width: 300px;
+    aspect-ratio: 2/1;
   }
 }

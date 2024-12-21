@@ -27,7 +27,6 @@ export default function Contact() {
       // 入力されたメッセージを取得
       const message = textareaRef.current?.value || '';
       // API Routeにデータを送信
-      
       const response = await fetch('/api/sendMessage', {
         method: 'POST',
         headers: {
@@ -48,7 +47,6 @@ export default function Contact() {
       setIsSubmitting(false);
     }
   }
-
   return (
     <div className={`${css.contents_wrap}`}>
       <p>メッセージをボトルにいれて海に流してみましょう</p>

@@ -8,7 +8,7 @@ export default async function Home() {
   // 記事を取得
   const contents = await getRandomPosts();
 
-  // ランダムなインデックスを3つ生成 (重複なし)
+  // ランダムなインデックスを生成(現在は1件だけど、複数いけるように作ってみた)
   const getRandomIndices = (num: number, max: number): number[] => {
     const indices: number[] = [];
     while (indices.length < num) {
