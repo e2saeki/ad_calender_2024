@@ -15,7 +15,7 @@
 
 1. **ローカル開発環境のセットアップ:**
    ```bash
-   cd bottle-message-app
+   cd ad_calender_2024
    npm install
    ```
 

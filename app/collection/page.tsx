@@ -2,7 +2,7 @@ import { getCardPosts } from '@/app/_libs/microcms';
 import css from '@/app/css/Collection.module.css';
 
 // ISR の再生成間隔を指定 
-export const revalidate = 10;
+export const revalidate = 120;
 
 export default async function Home() {
   const posts = await getCardPosts();
